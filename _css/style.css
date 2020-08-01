@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+body{
+	font-family: Arial, sans-serif;
+	color: #ffffff;
+	background-color: #000000;
+}
+
+div#top {
+	background-color: #000000;	
+	margin: -50px;
+}
+
+header#topo {
+	position: fixed;
+	background-color: #000000;
+	height: 300px;
+	margin: -20px;
+}
+header#topo img#image {
+	position: fixed;
+	right: 20px;
+	top: 10px;
+	width: 300px;
+	height: 300px;
+}
+
+header#topo img#logo {
+	position: fixed;
+	height: 60px;
+	left: 15px;
+	top: 50px;
+}
+
+header#topo h1{
+	position: fixed;
+	left: 250px;
+	top: 40px;
+	font-family: Times New Roman, sans-serif;
+	color: #ffffff;
+	font-size: 25pt;
+	text-decoration: italic;
+}
+
+figure.mic img {
+	position: absolute;
+	left: 25px;
+	top: 250px;
+	height: 200px;
+	width: 150px;
+}
+
+figure.bass img {
+	position: absolute;
+	left: 300px;
+	top: 250px;
+	height: 200px;
+	width: 150px;
+}
+
+figure.mic img.vfront {
+	-webkit-transition: 1.5s;	
+	opacity: 1;	
+}
+
+figure.mic img.vback {	
+	-webkit-transition: 1.5s;
+	opacity: 0;	
+}
+
+figure.mic:hover img.vfront {
+	-webkit-transition: 1.5s;
+	opacity: 0;
+}
+
+figure.mic:hover img.vback {
+	-webkit-transition: 1.5s;
+	opacity: 1;
+}
+
+figure.bass img.bfront {
+	-webkit-transition: 1.5s;	
+	opacity: 1;	
+}
+
+figure.bass img.bback {	
+	-webkit-transition: 1.5s;
+	opacity: 0;	
+}
+
+figure.bass:hover img.bfront {
+	-webkit-transition: 1.5s;
+	opacity: 0;
+}
+
+figure.bass:hover img.bback {
+	-webkit-transition: 1.5s;
+	opacity: 1;
+}
+
+div#musicas {
+	position: relative;
+	left: 75%;
+	top: 380px;
+}
+
+iframe#frame {	
+	height: 200px;
+	width: 280px;
+	border-left: 0.3px solid #303030;
+	border-top: 0.3px solid #303030;
+	border-bottom: 0.3px solid #ffffff;
+	border-right: 0.3px solid #ffffff;
+}
+div#music {	
+	padding: auto;
+}
+
+div#player {
+	position: fixed;
+}
+
+div#plist {
+	position: relative;
+	top: 50px;
+	margin-left: -30px;
+	padding-right: 40px;	
+	width: 300px;
+	height: 200px;
+	overflow: auto;
+}
+
+ul {
+	list-style: none;
+	margin-bottom: 100px;
+}
+
+a {
+	text-decoration: none;
+	color: #808080;
+	font-family: arial;	
+}
+
+li:hover {
+	background: #eee;
+	border-bottom: solid 1px #f60;	
+}
+
+li {
+	width: 90%;
+	padding: 5px;
+	font-size: 14pt;
+	border-bottom: solid 1px #ccc;
+}
+
+.active a{
+    background-color: rgba(180, 180, 180, 0);
+    border: none;
+    color: #f60;
+    font-size: 14pt;
+    font-style: italic;
+}
+
+audio#audio {	
+	width: 260px;
+	height: 40px;
+}

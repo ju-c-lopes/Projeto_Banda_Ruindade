@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>	
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="_css/style.css"/>
+	<script src="_script/script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>	
+</head>
+<body>
+<div id="music">
+	<div id="player">
+		<audio id="audio" preloaded="auto" controls>
+			<source src="#playlist" type="audio/mpeg"/>    
+		</audio>
+	</div>
+	<div id="plist">
+	<ul id="playlist">
+		<li class="active"><a href="_media/01_Ruindade.mp3">01 Ruindade</a></li>
+		<li><a href="_media/02_Ruindade.mp3">02 Ruindade</a></li>
+		<li><a href="_media/03_Ruindade.mp3">03 Ruindade</a></li>
+		<li><a href="_media/04_Ruindade.mp3">04 Ruindade</a></li>
+		<li><a href="_media/05_Ruindade.mp3">05 Ruindade</a></li>
+		<li><a href="_media/06_Ruindade.mp3">06 Ruindade</a></li>
+		<li><a href="_media/07_Ruindade.mp3">07 Ruindade</a></li>
+		<li><a href="_media/08_Ruindade.mp3">08 Ruindade</a></li>
+		<li><a href="_media/09_Ruindade.mp3">09 Ruindade</a></li>
+		<li><a href="_media/10_Ruindade.mp3">10 Ruindade</a></li>
+		<li><a href="_media/11_Ruindade.mp3">11 Ruindade</a></li>
+	</ul>
+	</div>
+	<script type="text/javascript">
+		inicio();
+		function inicio(){
+			var corrente = 0;
+			var audio = $("#audio");
+			var playlist = $("#playlist");
+			var tracks = playlist.find("li a");
+			var len = tracks.length - 1;
+			audio[0].play();
+			playlist.find("a").click(function(e){
+				e.preventDefault();
+				link = $(this);
+				corrente = link.parent().index();
+				run(link, audio[0]);
+			});
+			audio[0].addEventListener("ended", function(e){
+				corrente++;
+				if(corrente == len){
+					corrente = 0;
+					link = playlist.find("a")[0];
+				}else{
+					link = playlist.find("a")[corrente];
+				}
+				run($(link), audio[0]);
+			});
+		}
+		
+		function run(link, player){
+			player.src = link.attr("href");
+			par = link.parent();
+			par.addClass("active").siblings().removeClass("active");
+			player.load();
+			player.play();
+			
+		}
+	</script>
+</div>
+</body>
+</html>
